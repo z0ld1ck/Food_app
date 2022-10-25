@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   final screenList=[
     const MainPage(),
     const SearchPage(),
-    const CartPage(),
+    CartPage(),
     const ProfilePage()
   ];
 
