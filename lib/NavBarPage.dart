@@ -5,14 +5,14 @@ import 'ProfilePage.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class NavBar extends StatefulWidget {
+  const NavBar({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<NavBar> createState() => _NavBarState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _NavBarState extends State<NavBar> {
   final _deepBlue = Colors.orange[600];
   final _backBottNavBar = const Color(0xFF2C2C33);
   final backScreenColor = Colors.white;
