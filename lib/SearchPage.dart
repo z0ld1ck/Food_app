@@ -16,6 +16,7 @@ class _SearchPageState extends State<SearchPage> {
       Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          backgroundColor:const Color(0xFF2C2C33),
           title: const Text('All Users'),
         ),
         body: StreamBuilder<List<User>>(
@@ -34,4 +35,14 @@ class _SearchPageState extends State<SearchPage> {
               }
             }),
       );
+
+  Widget buildUser(User user) =>
+      ListTile(
+        leading: CircleAvatar(child: Text('${user.age}'),),
+        title: Text(user.name),
+        subtitle: Text(user.birthday.toIso8601String()),
+      );
+
 }
+
+

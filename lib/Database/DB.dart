@@ -14,6 +14,9 @@ class User {
     required this.birthday,
   });
 
+
+  //Method which converts a User instance into a map
+
   Map<String, dynamic> toJson() => {
     'id': id,
     'name': name,
@@ -21,6 +24,7 @@ class User {
     'birthday': birthday,
   };
 
+  //A constructor, for constructing a new User instance from a map structure.
 
   static User fromJson(Map<String,dynamic> json)=>User(
     id:json['id'],
@@ -30,7 +34,16 @@ class User {
   );
 }
 
+ //Method for reading data from Firebase and display on screen
 
+Stream<List<User>> readUsers() =>
+    FirebaseFirestore.instance
+        .collection('users')
+        .snapshots()
+        .map((snapshot) =>
+        snapshot.docs.map((doc) => User.fromJson(doc.data())).toList());
+
+  //Method for creating new Users
 
 Future createUser({required String name}) async {
   final docUser = FirebaseFirestore.instance.collection('users').doc();
@@ -42,24 +55,14 @@ Future createUser({required String name}) async {
     birthday: DateTime(2003, 6, 26),
   );
   final json = user.toJson();
-  // final json = {
-  //   'name':name,
-  //   'age':21,
-  //   'birthday':DateTime(2001,7,28),
-  // };
 
   await docUser.set(json);
 }
-Stream<List<User>> readUsers() =>
-    FirebaseFirestore.instance
-        .collection('users')
-        .snapshots()
-        .map((snapshot) =>
-        snapshot.docs.map((doc) => User.fromJson(doc.data())).toList());
 
-Widget buildUser(User user) =>
-    ListTile(
-      leading: CircleAvatar(child: Text('${user.age}'),),
-      title: Text(user.name),
-      subtitle: Text(user.birthday.toIso8601String()),
-    );
+//Visualization of the output data
+// Widget buildUser(User user) =>
+//     ListTile(
+//       leading: CircleAvatar(child: Text('${user.age}'),),
+//       title: Text(user.name),
+//       subtitle: Text(user.birthday.toIso8601String()),
+//     );

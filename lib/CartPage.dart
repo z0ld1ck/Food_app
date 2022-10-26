@@ -1,5 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:datetime_picker_formfield_new/datetime_picker_formfield_new.dart';
+import 'package:food_app/Database/DB.dart';
+import 'package:food_app/SearchPage.dart';
 import 'package:intl/intl.dart';
 
 class CartPage extends StatelessWidget {
@@ -9,11 +12,13 @@ class CartPage extends StatelessWidget {
 
   final format = DateFormat("yyyy-MM-dd");
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor:const Color(0xFF2C2C33),
         title: const Text('Add User'),
       ),
       body: ListView(
@@ -51,7 +56,20 @@ class CartPage extends StatelessWidget {
           ElevatedButton(
             child: const Text('Create'),
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SearchPage()),
+              );
+              final user=User(
+                name:controllerName.text,
+                age:int.parse(controllerAge.text),
+                birthday:DateTime.parse(controllerDate.text), id: '',
+              );
+
+              createUser(user);
+
+
+              // Navigator.pop(context);
             },
           )
         ],
@@ -63,4 +81,14 @@ class CartPage extends StatelessWidget {
         labelText: label,
         border: const OutlineInputBorder(),
       );
+  Future createUser(User user) async {
+    final docUser = FirebaseFirestore.instance.collection('users').doc();
+    user.id=docUser.id;
+
+    final json = user.toJson();
+    await docUser.set(json);
+
+    await docUser.set(json);
+  }
+
 }
