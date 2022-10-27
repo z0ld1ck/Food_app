@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter/animation.dart';
+import '../Database/DB.dart';
+
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -34,13 +37,28 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             Container(
               margin: const EdgeInsets.only(top: 28, left: 28),
-              child: const Text(
-                'Hi,User',
-                style: TextStyle(
-                  fontSize: 25,
-                  color: Color(0xff363636),
-                ),
-              ),
+              child:StreamBuilder<List<User>>(
+                  stream: readUsers(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasError) {
+                      return Text('Something went wrong! ${snapshot.error}');
+                    } else if (snapshot.hasData) {
+                      final users = snapshot.data!;
+
+                      return ListView(
+                        children: users.map(buildUser).toList(),
+                      );
+                    } else {
+                      return const Center(child: CircularProgressIndicator());
+                    }
+                  }),
+              // Text(
+              //   'Hi, ${User.name}',
+              //   style:const TextStyle(
+              //     fontSize: 25,
+              //     color: Color(0xff363636),
+              //   ),
+              // ),
             ),
             Container(
               margin: const EdgeInsets.only(top: 5, left: 20),
@@ -146,4 +164,12 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
+  Widget buildUser(User user)=>
+      ListTile(
+        title: Text(user.name),
+      );
+
+
+
 }

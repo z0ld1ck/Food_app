@@ -61,9 +61,9 @@ Future createUser({required String name}) async {
 
 //Visualization of the output data
 
-Widget buildUser(User user) =>
-    ListTile(
-      leading: CircleAvatar(child: Text('${user.age}'),),
-      title: Text(user.name),
-      subtitle: Text(user.birthday.toIso8601String()),
-    );
+// Widget buildUser(User user) =>
+//     ListTile(
+//       leading: CircleAvatar(child: Text('${user.age}'),),
+//       title: Text(user.name),
+//       subtitle: Text(user.birthday.toIso8601String()),
+//     );
