@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:datetime_picker_formfield_new/datetime_picker_formfield_new.dart';
 import 'package:food_app/Database/DB.dart';
-import 'package:food_app/SearchPage.dart';
+import 'package:food_app/Pages/SearchPage.dart';
 import 'package:intl/intl.dart';
 
 class CartPage extends StatelessWidget {
@@ -11,6 +11,8 @@ class CartPage extends StatelessWidget {
   final controllerDate = TextEditingController();
 
   final format = DateFormat("yyyy-MM-dd");
+
+  CartPage({Key? key}) : super(key: key);
 
 
   @override

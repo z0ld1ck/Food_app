@@ -1,7 +1,7 @@
-import 'SearchPage.dart';
-import 'CartPage.dart';
-import 'MainPage.dart';
-import 'ProfilePage.dart';
+import 'Pages/SearchPage.dart';
+import 'Pages/CartPage.dart';
+import 'Pages/HomePage.dart';
+import 'Pages/ProfilePage.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -20,7 +20,7 @@ class _NavBarState extends State<NavBar> {
   int index = 0;
 
   final screenList=[
-    const MainPage(),
+    const HomePage(),
     const SearchPage(),
     CartPage(),
     const ProfilePage()
