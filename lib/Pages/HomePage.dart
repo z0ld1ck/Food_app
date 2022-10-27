@@ -1,8 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
 // import 'package:flutter/animation.dart';
 import '../Database/DB.dart';
-
-
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,11 +17,10 @@ class _HomePageState extends State<HomePage> {
     Size size = MediaQuery.of(context).size;
 
 
-
     return Scaffold(
       backgroundColor: const Color(0xFF2C2C33),
       appBar: AppBar(
-        backgroundColor:const Color(0xFF2C2C33),
+        backgroundColor: const Color(0xFF2C2C33),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -37,19 +36,13 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             Container(
               margin: const EdgeInsets.only(top: 28, left: 28),
-              child:StreamBuilder<List<User>>(
-                  stream: readUsers(),
+              child: StreamBuilder<User>(
+                  stream:readUsers(),
                   builder: (context, snapshot) {
-                    if (snapshot.hasError) {
-                      return Text('Something went wrong! ${snapshot.error}');
-                    } else if (snapshot.hasData) {
-                      final users = snapshot.data!;
+                    if (snapshot.hasData) {
+                      final user = snapshot.data!;
 
-                      return ListView(
-                        children: users.map(buildUser).toList(),
-                      );
-                    } else {
-                      return const Center(child: CircularProgressIndicator());
+                      return Text('Hi! ${user.name}');
                     }
                   }),
               // Text(
@@ -102,7 +95,8 @@ class _HomePageState extends State<HomePage> {
                           fontSize: 20,
                         ),
                         decoration: InputDecoration(
-                          border: InputBorder.none, hintText: "Search",
+                          border: InputBorder.none,
+                          hintText: "Search",
                         ),
                       ),
                     ),
@@ -165,11 +159,9 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget buildUser(User user)=>
-      ListTile(
+
+
+  Widget buildUser(User user) => ListTile(
         title: Text(user.name),
       );
-
-
-
 }
