@@ -36,12 +36,12 @@ class User {
 
  //Method for reading data from Firebase and display on screen
 
-Stream<List<User>> readUsers() =>
+Stream<Iterable<User>> readUsers() =>
     FirebaseFirestore.instance
         .collection('users')
         .snapshots()
         .map((snapshot) =>
-        snapshot.docs.map((doc) => User.fromJson(doc.data())).toList());
+        snapshot.docs.map((doc) => User.fromJson(doc.data())));
 
   //Method for creating new Users
 
