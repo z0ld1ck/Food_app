@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:food_app/SplashScreen/SplashScreen.dart';
 import 'NavBarPage.dart';
 
-
-Future main() async{
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
-runApp(const Main());
+  runApp(const Main());
 }
 
 class Main extends StatelessWidget {
@@ -16,8 +16,8 @@ class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: NavBar(),
+      debugShowCheckedModeBanner:false,
+      home:NavBar(),
     );
   }
 }

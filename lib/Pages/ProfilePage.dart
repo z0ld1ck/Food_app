@@ -35,7 +35,7 @@ class ProfilePage extends StatelessWidget {
                 final docUser =
                     FirebaseFirestore.instance
                         .collection('users')
-                        .doc('myQqY0t5OqLdXSda9xF5');
+                        .doc('2KXuozZiz3hcNogB5vTw');
 
 
                 docUser.delete();
