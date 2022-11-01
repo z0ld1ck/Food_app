@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 // import 'package:flutter/animation.dart';
 import '../Database/DB.dart';
+import '/Pages/new.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,7 +17,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
 
     return Scaffold(
       backgroundColor: const Color(0xFF2C2C33),
@@ -36,22 +37,14 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             Container(
               margin: const EdgeInsets.only(top: 28, left: 28),
-              child: StreamBuilder<User>(
-                  stream:readUsers(),
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData) {
-                      final user = snapshot.data!;
-
-                      return Text('Hi! ${user.name}');
-                    }
-                  }),
-              // Text(
-              //   'Hi, ${User.name}',
-              //   style:const TextStyle(
-              //     fontSize: 25,
-              //     color: Color(0xff363636),
-              //   ),
-              // ),
+              child: const Text(
+                'Hi,User!',
+                style: TextStyle(
+                  fontSize: 2,
+                  color: Color(0xff363636),
+                  fontFamily: 'Roboto',
+                ),
+              ),
             ),
             Container(
               margin: const EdgeInsets.only(top: 5, left: 20),
@@ -159,9 +152,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-
-
-  Widget buildUser(User user) => ListTile(
-        title: Text(user.name),
-      );
+// Widget buildUser(User user) => ListTile(
+//       title: Text(user.name),
+//     );
 }
