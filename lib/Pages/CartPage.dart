@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
 import 'package:datetime_picker_formfield_new/datetime_picker_formfield_new.dart';
+import 'package:flutter/material.dart';
 import 'package:food_app/Database/DB.dart';
 import 'package:food_app/Pages/SearchPage.dart';
 import 'package:intl/intl.dart';
@@ -62,13 +62,13 @@ class CartPage extends StatelessWidget {
                 context,
                 MaterialPageRoute(builder: (context) => const SearchPage()),
               );
-              final user=User(
-                name:controllerName.text,
-                age:int.parse(controllerAge.text),
-                birthday:DateTime.parse(controllerDate.text), id: '',
-              );
+              // final user=User(
+              //   name:controllerName.text,
+              //   age:int.parse(controllerAge.text),
+              //   birthday:DateTime.parse(controllerDate.text), id: '',
+              // );
 
-              createUser(user);
+              // createUser(user);
 
 
               // Navigator.pop(context);
@@ -83,14 +83,14 @@ class CartPage extends StatelessWidget {
         labelText: label,
         border: const OutlineInputBorder(),
       );
-  Future createUser(User user) async {
-    final docUser = FirebaseFirestore.instance.collection('users').doc();
-    user.id=docUser.id;
-
-    final json = user.toJson();
-    await docUser.set(json);
-
-    await docUser.set(json);
-  }
+  // Future createUser(User user) async {
+  //   final docUser = FirebaseFirestore.instance.collection('users').doc();
+  //   user.id=docUser.id;
+  //
+  //   final json = user.toJson();
+  //   await docUser.set(json);
+  //
+  //   await docUser.set(json);
+  // }
 
 }
