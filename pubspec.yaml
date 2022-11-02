@@ -24,6 +24,7 @@ dependencies:
 
 
 
+
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
@@ -43,6 +44,7 @@ flutter:
   assets:
       - assets/images/splash2.jpg
       - assets/images/splash3.jpg
+      - assets/images/pizza.jpg
 
   # example:
   # fonts:
