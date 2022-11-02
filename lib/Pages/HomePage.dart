@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino(1).dart';
 import 'package:flutter/foundation(1).dart';
 import 'package:flutter/material.dart';
 import 'package:food_app/Components/Category.dart';
+import 'package:food_app/Components/recede_carousel.dart';
 import 'package:food_app/category_details/category_seeall_detail_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -26,6 +28,15 @@ class _HomePageState extends State<HomePage> {
             child: Padding(
               padding: const EdgeInsets.only(top: 10.0, left: 10, right: 10),
               child: Container(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Recede('assets/images/загруженное.jpg'),
+                    Recede('assets/images/pizza.jpg'),
+                    Recede('assets/images/pizza.jpg'),
+                    Recede('assets/images/pizza.jpg'),
+                  ],
+                ),
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.bottomLeft,
@@ -98,25 +109,35 @@ class _HomePageState extends State<HomePage> {
           ),
           Container(
             height: 120,
-            margin: const EdgeInsets.only(top:20,left:20),
+            margin: const EdgeInsets.only(top: 20, left: 20),
             child: ListView(
-              scrollDirection:Axis.horizontal,
+              scrollDirection: Axis.horizontal,
               children: [
+                Categories('assets/images/pizza.jpg', 'Pizza'),
                 Categories(
-                    'assets/images/pizza.jpg','Pizza'),
+                  'assets/images/pizza.jpg',
+                  'Pizza',
+                ),
                 Categories(
-                    'assets/images/pizza.jpg','Pizza',),
+                  'assets/images/pizza.jpg',
+                  'Pizza',
+                ),
                 Categories(
-                    'assets/images/pizza.jpg','Pizza',),
+                  'assets/images/pizza.jpg',
+                  'Pizza',
+                ),
                 Categories(
-                  'assets/images/pizza.jpg','Pizza',),
+                  'assets/images/pizza.jpg',
+                  'Pizza',
+                ),
                 Categories(
-                  'assets/images/pizza.jpg','Pizza',),
+                  'assets/images/pizza.jpg',
+                  'Pizza',
+                ),
                 Categories(
-                  'assets/images/pizza.jpg','Pizza',),
-                Categories(
-                  'assets/images/pizza.jpg','Pizza',),
-
+                  'assets/images/pizza.jpg',
+                  'Pizza',
+                ),
               ],
             ),
           ),
