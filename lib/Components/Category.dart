@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-Widget Categories(String image, String name, String quatity) {
+Widget Categories(String image, String name) {
   return Container(
-      margin: const EdgeInsets.only(right: 15),
-      width: 100,
+      margin: const EdgeInsets.only(right: 10),
+      width: 90,
+      height: 100,
       decoration: BoxDecoration(
-        color: const Color(0xff28475a),
-        borderRadius: BorderRadius.circular(10),
+        // color: const Color(0xff28475a),
+        borderRadius: BorderRadius.circular(30),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -16,7 +17,7 @@ Widget Categories(String image, String name, String quatity) {
             child: Image.asset(image),
           ),
           Container(
-            margin: const EdgeInsets.only(top: 15),
+            margin: const EdgeInsets.only(top: 10),
             child: Text(
               name,
               style: const TextStyle(
@@ -28,19 +29,19 @@ Widget Categories(String image, String name, String quatity) {
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(top: 10),
-            padding: const EdgeInsets.all(7),
+            // margin: const EdgeInsets.only(top: 10),
+            // padding: const EdgeInsets.all(7),
             decoration: BoxDecoration(
               color: const Color(0xffd9fffa).withOpacity(.07),
             ),
-            child: Text(
-              quatity,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 8,
-                fontFamily: 'Roboto',
-              ),
-            ),
+            // child: Text(
+            //   quatity,
+            //   style: const TextStyle(
+            //     color: Colors.white,
+            //     fontSize: 8,
+            //     fontFamily: 'Roboto',
+            //   ),
+            // ),|
           ),
         ],
       ));
