@@ -46,22 +46,15 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Container(
-            decoration:const BoxDecoration(
-              border:Border(
-                top: BorderSide(color: Colors.yellow),
-                left: BorderSide(color: Colors.yellow),
-                right: BorderSide(color: Colors.yellow),
-                bottom: BorderSide(color: Colors.yellow),
-              ),
-            ),
+            height: 40,
             width: size.width,
-            margin: const EdgeInsets.only(top: 25, left: 20),
+            margin: const EdgeInsets.only(top: 10, left: 20),
             child: Stack(
               fit: StackFit.loose,
               children: [
                 Container(
                   child: const Align(
-                    alignment:Alignment.bottomLeft,
+                    alignment: Alignment.bottomLeft,
                     child: Text(
                       'Categories',
                       style: TextStyle(
@@ -75,8 +68,8 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 250, top: 0),
-                  child:Align(
-                    alignment:Alignment.centerRight,
+                  child: Align(
+                    alignment: Alignment.centerRight,
                     child: TextButton(
                       onPressed: () {
                         Navigator.push(
@@ -101,52 +94,36 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
+          Container(
+            child: Padding(
+              padding: const EdgeInsets.only(
+                top: 10.0,
+                right: 200,
+              ),
+              child: Container(
+                width: 150,
+                height: 150,
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.bottomLeft,
+                      end: Alignment.topRight,
+                      colors: [
+                        Color(0xFF8D59AD),
+                        Color(0xFF2D115C),
+                      ]),
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(30),
+                    topLeft: Radius.circular(30),
+                    bottomRight: Radius.circular(30),
+                    bottomLeft: Radius.circular(30),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
   }
 }
-//       Container(
-//         child: const Text(
-//           'See all',
-//           style: TextStyle(
-//             color: Colors.white,
-//             fontSize: 25,
-//             fontFamily: 'Roboto',
-//             fontWeight: FontWeight.w700,
-//           ),
-//         ),
-//         // margin: const EdgeInsets.only(top: 5, right: 1),
-//         alignment: Alignment.centerRight,
-//       ),
-//     ],
-//   ),
-// ),
-
-// Container(
-//   child: Padding(
-//     padding: const EdgeInsets.only(
-//       top: 100.0,
-//       right: 200,
-//     ),
-//     child: Container(
-//       width: 150,
-//       height: 150,
-//       decoration: const BoxDecoration(
-//         gradient: LinearGradient(
-//             begin: Alignment.bottomLeft,
-//             end: Alignment.topRight,
-//             colors: [
-//               Color(0xFF8D59AD),
-//               Color(0xFF2D115C),
-//             ]),
-//         borderRadius: BorderRadius.only(
-//           topRight: Radius.circular(30),
-//           topLeft: Radius.circular(30),
-//           bottomRight: Radius.circular(30),
-//           bottomLeft: Radius.circular(30),
-//         ),
-//       ),
-//     ),
-//   ),
-// ),
+//
