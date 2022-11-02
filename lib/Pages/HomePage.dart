@@ -1,4 +1,6 @@
+import 'package:flutter/foundation(1).dart';
 import 'package:flutter/material.dart';
+import 'package:food_app/Components/Category.dart';
 import 'package:food_app/category_details/category_seeall_detail_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -95,32 +97,56 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Container(
-            child: Padding(
-              padding: const EdgeInsets.only(
-                top: 10.0,
-                right: 200,
-              ),
-              child: Container(
-                width: 150,
-                height: 150,
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      end: Alignment.topRight,
-                      colors: [
-                        Color(0xFF8D59AD),
-                        Color(0xFF2D115C),
-                      ]),
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(30),
-                    topLeft: Radius.circular(30),
-                    bottomRight: Radius.circular(30),
-                    bottomLeft: Radius.circular(30),
-                  ),
-                ),
-              ),
+            height: 120,
+            margin: const EdgeInsets.only(top:20,left:20),
+            child: ListView(
+              scrollDirection:Axis.horizontal,
+              children: [
+                Categories(
+                    'assets/images/pizza.jpg','Pizza'),
+                Categories(
+                    'assets/images/pizza.jpg','Pizza',),
+                Categories(
+                    'assets/images/pizza.jpg','Pizza',),
+                Categories(
+                  'assets/images/pizza.jpg','Pizza',),
+                Categories(
+                  'assets/images/pizza.jpg','Pizza',),
+                Categories(
+                  'assets/images/pizza.jpg','Pizza',),
+                Categories(
+                  'assets/images/pizza.jpg','Pizza',),
+
+              ],
             ),
           ),
+          // Container(
+          //   child: Padding(
+          //     padding: const EdgeInsets.only(
+          //       top: 10.0,
+          //       right: 200,
+          //     ),
+          //     child: Container(
+          //       width: 150,
+          //       height: 150,
+          //       decoration: const BoxDecoration(
+          //         gradient: LinearGradient(
+          //             begin: Alignment.bottomLeft,
+          //             end: Alignment.topRight,
+          //             colors: [
+          //               Color(0xFF8D59AD),
+          //               Color(0xFF2D115C),
+          //             ]),
+          //         borderRadius: BorderRadius.only(
+          //           topRight: Radius.circular(30),
+          //           topLeft: Radius.circular(30),
+          //           bottomRight: Radius.circular(30),
+          //           bottomLeft: Radius.circular(30),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
