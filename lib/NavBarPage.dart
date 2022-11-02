@@ -13,8 +13,8 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
-  final _deepBlue = Colors.orange[600];
-  final _backBottNavBar = const Color(0xFF2C2C33);
+  final deepBlue = Color(0xFF678094);
+  final backBottNavBar = const Color(0xFF24272C);
   final backScreenColor = Colors.white;
 
   int index = 0;
@@ -33,8 +33,8 @@ class _NavBarState extends State<NavBar> {
       backgroundColor: backScreenColor,
       bottomNavigationBar: NavigationBarTheme(
         data: NavigationBarThemeData(
-          indicatorColor:_deepBlue,
-          backgroundColor: _backBottNavBar,
+          indicatorColor:const Color(0xFF678094),
+          backgroundColor: backBottNavBar,
           labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
           labelTextStyle: MaterialStateProperty.all(
             const TextStyle(
