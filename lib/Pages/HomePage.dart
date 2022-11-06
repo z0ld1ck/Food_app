@@ -22,152 +22,530 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: const Color(0xFF24272C),
       ),
-      body: Column(
+      body: ListView(
         children: [
-          Container(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 10.0, left: 10, right: 10),
-              child: Container(
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    Recede('assets/images/загруженное.jpg'),
-                    Recede('assets/images/pizza.jpg'),
-                    Recede('assets/images/pizza.jpg'),
-                    Recede('assets/images/pizza.jpg'),
-                  ],
-                ),
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.bottomLeft,
-                    end: Alignment.topRight,
-                    colors: [
-                      Color(0xFF8D59AD),
-                      Color(0xFF2D115C),
-                    ],
-                  ),
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(50),
-                    topLeft: Radius.circular(50),
-                    bottomLeft: Radius.circular(50),
-                    bottomRight: Radius.circular(50),
-                  ),
-                ),
-                height: 200,
-              ),
-            ),
-          ),
-          Container(
-            height: 40,
-            width: size.width,
-            margin: const EdgeInsets.only(top: 10, left: 20),
-            child: Stack(
-              fit: StackFit.loose,
-              children: [
-                Container(
-                  child: const Align(
-                    alignment: Alignment.bottomLeft,
-                    child: Text(
-                      'Categories',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w700,
+          Column(
+            children: [
+              Container(
+                child: Padding(
+                  padding:
+                      const EdgeInsets.only(top: 10.0, left: 10, right: 10),
+                  child: Container(
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        Recede('assets/images/загруженное.jpg'),
+                        Recede('assets/images/загруженное.jpg'),
+                        Recede('assets/images/загруженное.jpg'),
+                        Recede('assets/images/загруженное.jpg'),
+                      ],
+                    ),
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.bottomLeft,
+                        end: Alignment.topRight,
+                        colors: [
+                          Color(0xFF8D59AD),
+                          Color(0xFF2D115C),
+                        ],
+                      ),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(10),
+                        topLeft: Radius.circular(10),
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10),
                       ),
                     ),
+                    height: 200,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 250, top: 0),
-                  child: Align(
-                    alignment: Alignment.centerRight,
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const SeeAll(),
+              ),
+              Container(
+                height: 40,
+                width: size.width,
+                margin: const EdgeInsets.only(top: 10, left: 20),
+                child: Stack(
+                  fit: StackFit.loose,
+                  children: [
+                    Container(
+                      child: const Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Text(
+                          'Categories',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.w700,
                           ),
-                        );
-                      },
-                      child: const Text(
-                        'See all',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 25,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w700,
                         ),
                       ),
                     ),
-                  ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 250, top: 0),
+                      child: Align(
+                        alignment: Alignment.centerRight,
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SeeAll(),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            'See all',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+              Container(
+                height: 120,
+                margin: const EdgeInsets.only(top: 20, left: 10),
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Categories('assets/images/pizza.jpg', 'Pizza'),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                child: Stack(
+                  fit: StackFit.loose,
+                  children: [
+                    Container(
+                      child: const Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Text(
+                          'Categories',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 250, top: 0),
+                      child: Align(
+                        alignment: Alignment.centerRight,
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SeeAll(),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            'See all',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 120,
+                margin: const EdgeInsets.only(top: 0, left: 10),
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Categories('assets/images/pizza.jpg', 'Pizza'),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                child: Stack(
+                  fit: StackFit.loose,
+                  children: [
+                    Container(
+                      child: const Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Text(
+                          'Categories',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 250, top: 0),
+                      child: Align(
+                        alignment: Alignment.centerRight,
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SeeAll(),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            'See all',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 120,
+                margin: const EdgeInsets.only(top: 0, left: 10),
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Categories('assets/images/pizza.jpg', 'Pizza'),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                child: Stack(
+                  fit: StackFit.loose,
+                  children: [
+                    Container(
+                      child: const Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Text(
+                          'Categories',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 250, top: 0),
+                      child: Align(
+                        alignment: Alignment.centerRight,
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SeeAll(),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            'See all',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 120,
+                margin: const EdgeInsets.only(top: 0, left: 10),
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Categories('assets/images/pizza.jpg', 'Pizza'),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                child: Stack(
+                  fit: StackFit.loose,
+                  children: [
+                    Container(
+                      child: const Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Text(
+                          'Categories',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 250, top: 0),
+                      child: Align(
+                        alignment: Alignment.centerRight,
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SeeAll(),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            'See all',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 120,
+                margin: const EdgeInsets.only(top: 0, left: 10),
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Categories('assets/images/pizza.jpg', 'Pizza'),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                child: Stack(
+                  fit: StackFit.loose,
+                  children: [
+                    Container(
+                      child: const Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Text(
+                          'Categories',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 250, top: 0),
+                      child: Align(
+                        alignment: Alignment.centerRight,
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SeeAll(),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            'See all',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 120,
+                margin: const EdgeInsets.only(top: 0, left: 10),
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Categories('assets/images/pizza.jpg', 'Pizza'),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                    Categories(
+                      'assets/images/pizza.jpg',
+                      'Pizza',
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
-          Container(
-            height: 120,
-            margin: const EdgeInsets.only(top: 20, left: 20),
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: [
-                Categories('assets/images/pizza.jpg', 'Pizza'),
-                Categories(
-                  'assets/images/pizza.jpg',
-                  'Pizza',
-                ),
-                Categories(
-                  'assets/images/pizza.jpg',
-                  'Pizza',
-                ),
-                Categories(
-                  'assets/images/pizza.jpg',
-                  'Pizza',
-                ),
-                Categories(
-                  'assets/images/pizza.jpg',
-                  'Pizza',
-                ),
-                Categories(
-                  'assets/images/pizza.jpg',
-                  'Pizza',
-                ),
-                Categories(
-                  'assets/images/pizza.jpg',
-                  'Pizza',
-                ),
-              ],
-            ),
-          ),
-          // Container(
-          //   child: Padding(
-          //     padding: const EdgeInsets.only(
-          //       top: 10.0,
-          //       right: 200,
-          //     ),
-          //     child: Container(
-          //       width: 150,
-          //       height: 150,
-          //       decoration: const BoxDecoration(
-          //         gradient: LinearGradient(
-          //             begin: Alignment.bottomLeft,
-          //             end: Alignment.topRight,
-          //             colors: [
-          //               Color(0xFF8D59AD),
-          //               Color(0xFF2D115C),
-          //             ]),
-          //         borderRadius: BorderRadius.only(
-          //           topRight: Radius.circular(30),
-          //           topLeft: Radius.circular(30),
-          //           bottomRight: Radius.circular(30),
-          //           bottomLeft: Radius.circular(30),
-          //         ),
-          //       ),
-          //     ),
-          //   ),
-          // ),
         ],
       ),
     );
