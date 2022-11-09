@@ -21,6 +21,7 @@ dependencies:
 #  splash_screen_view: ^3.0.0
   firebase_database: ^10.0.3
   firebase_core_platform_interface: ^4.5.2
+  dots_indicator: ^2.1.0
 
 
 
@@ -46,6 +47,7 @@ flutter:
       - assets/images/splash3.jpg
       - assets/images/pizza.jpg
       - assets/images/загруженное.jpg
+      - assets/images/og_image_mall_web.jpg
 
   # example:
   # fonts:
