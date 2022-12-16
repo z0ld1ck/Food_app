@@ -22,7 +22,7 @@ class _NavBarState extends State<NavBar> {
   final screenList=[
     const HomePage(),
     const SearchPage(),
-    CartPage(),
+    const CartPage(),
     const ProfilePage()
   ];
 
