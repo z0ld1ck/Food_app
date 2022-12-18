@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:food_app/Authorization/auth_sreen.dart';
 import 'package:food_app/Pages/HomePage.dart';
 import 'package:food_app/Pages/SearchPage.dart';
 import 'package:food_app/SplashScreen/SplashScreen.dart';
