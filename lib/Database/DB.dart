@@ -1,72 +1,36 @@
-// // import 'package:cloud_firestore/cloud_firestore.dart';
-// // import 'package:flutter/material.dart';
-// //
-// // class User {
-// //   late String id;
-// //   late String name;
-// //   late int age;
-// //   late DateTime birthday;
-// //
-// //   User({
-// //     required this.id,
-// //     required this.name,
-// //     required this.age,
-// //     required this.birthday,
-// //   });
-// //
-// //
-// //   //Method which converts a User instance into a map
-// //
-// //   Map<String, dynamic> toJson() => {
-// //     'id': id,
-// //     'name': name,
-// //     'age': age,
-// //     'birthday': birthday,
-// //   };
-// //
-// //   //A constructor, for constructing a new User instance from a map structure.
-// //
-// //   static User fromJson(Map<String,dynamic> json)=>User(
-// //     id:json['id'],
-// //     name:json['name'],
-// //     age:json['age'],
-// //     birthday:(json['birthday'] as Timestamp).toDate(),
-// //   );
-// // }
-// //
-// //  //Method for reading data from Firebase and display on screen
-// //
-// // Stream<List<User>> readUsers() =>
-// //     FirebaseFirestore.instance
-// //         .collection('users')
-// //         .snapshots()
-// //         .map((snapshot) =>
-// //             snapshot.docs.map((doc) => User.fromJson(doc.data())));
-// //
-// //   //Method for creating new Users
-// //
-// // Future createUser({required String name}) async {
-// //   final docUser = FirebaseFirestore.instance.collection('users').doc();
-// //
-// //   final user = User(
-// //     id: docUser.id,
-// //     name:name,
-// //     age: 19,
-// //     birthday: DateTime(2003, 6, 26),
-// //   );
-// //   final json = user.toJson();
-// //
-// //   await docUser.set(json);
-// // }
-// //
-// // //Visualization of the output data
-// //
-// // // Widget buildUser(User user) =>
-// // //     ListTile(
-// // //       leading: CircleAvatar(child: Text('${user.age}'),),
-// // //       title: Text(user.name),
-// // //       subtitle: Text(user.birthday.toIso8601String()),
-// // //     );
+// import 'package:firebase_database/firebase_database.dart';
+//
+// class DB{
+//   late DatabaseReference _dbref;
+//   String databasejson = "";
+//   int countvalue = 0;
+//
+//   createDB() {
+//     _dbref.child('Users').set({'key_counter': '0', 'createby': 'Alikhan'});
+//     _dbref.child('Order').set({'id': '1', 'numof': '0'});
+//   }
+//
+//   _dbOnce() {
+//     _dbref.once().then((DatabaseEvent databaseEvent) {
+//       print('read once-' + databaseEvent.snapshot.value.toString());
+//       setState(() {
+//         databasejson = databaseEvent.snapshot.value.toString();
+//       });
+//     });
+//   }
+//
+//   _updateValueInDb() {
+//     _dbref.child('Users').update({'createby': 'wewew', 'key_counter': '1'});
+//     _dbref.child('Order').update({'id': '2', 'numof': '1'});
+//   }
+//
+//   _deleteValueFromDb() {
+//     _dbref.child('').remove();
+//   }
+//
+// }
+
+
 // import 'package:firebase_database/firebase_database.dart';
 // import 'package:flutter/material.dart';
 //
@@ -78,19 +42,50 @@
 // }
 //
 // class _DBState extends State<DB> {
-//   late DatabaseReference dbref;
-//   String databasejson="";
 //
+//   late DatabaseReference _dbref;
+//   String databasejson = "";
+//   int countvalue = 0;
 //
 //   @override
 //   void initState() {
 //     // TODO: implement initState
 //     super.initState();
-//     dbref=FirebaseDatabase.instance.ref();
+//     _dbref = FirebaseDatabase.instance.ref();
+//
+//     _dbref.child('').child('key_counter').onValue.listen((event) {
+//       setState(() {
+//         countvalue = event.snapshot.value as int;
+//       });
+//     });
 //   }
+//
 //
 //   @override
 //   Widget build(BuildContext context) {
 //     return Container();
 //   }
+//
+//   _createDB() {
+//     _dbref.child('Users').set({'key_counter': '0', 'createby': 'Alikhan'});
+//     _dbref.child('Order').set({'id': '1', 'numof': '0'});
+//   }
+//
+//   _dbOnce() {
+//     _dbref.once().then((DatabaseEvent databaseEvent) {
+//       setState(() {
+//         databasejson = databaseEvent.snapshot.value.toString();
+//       });
+//     });
+//   }
+//
+//   _updateValueInDb() {
+//     _dbref.child('Users').update({'createby': 'wewew', 'key_counter': '1'});
+//     _dbref.child('Order').update({'id': '2', 'numof': '1'});
+//   }
+//
+//   _deleteValueFromDb() {
+//     _dbref.child('').remove();
+//   }
+//
 // }
